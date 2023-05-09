@@ -1,21 +1,18 @@
+import { defineConfig } from "sanity";
+import { deskTool } from "sanity/desk";
+import schemas from "./sanity/schemas";
 
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
+const config = defineConfig({
+  projectId: "4cv5qz6b",
+  dataset: "production",
 
-
-const config =  defineConfig({
-
-  projectId: '4cv5qz6b',
-  dataset: 'production',
-  
-  title: 'Next Sanity Studio',
+  title: "Next Sanity Studio",
   apiVersion: "2023-05-05",
 
   basePath: "/admin",
 
   plugins: [deskTool()],
-
-})
-
+  schema: { types: schemas },
+});
 
 export default config;
